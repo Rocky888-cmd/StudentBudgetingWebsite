@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Budgeting System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>🎓 Student Budget Dashboard</h1>
+
+    <!-- Allowance Setup -->
+    <section class="card">
+      <h2>Allowance Setup</h2>
+      <input type="number" id="allowanceAmount" placeholder="Allowance Amount (₱)" />
+      <select id="allowanceType">
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+      </select>
+      <button id="saveAllowance">Save Allowance</button>
+      <p id="dailyBudgetDisplay"></p>
+    </section>
+
+    <!-- Expense Entry -->
+    <section class="card">
+      <h2>Add Expense</h2>
+      <input type="number" id="expenseAmount" placeholder="Amount (₱)" />
+      <select id="expenseCategory">
+        <option>Food</option>
+        <option>Transport</option>
+        <option>School</option>
+        <option>Misc</option>
+      </select>
+      <input type="text" id="expenseDesc" placeholder="Description" />
+      <button id="addExpense">Add Expense</button>
+    </section>
+
+    <!-- Daily Summary -->
+    <section class="card">
+      <h2>Today's Summary</h2>
+      <p>Daily Budget: ₱<span id="dailyBudget">0</span></p>
+      <p>Spent Today: ₱<span id="spentToday">0</span></p>
+      <p>Remaining: ₱<span id="remaining">0</span></p>
+    </section>
+
+    <!-- Ledger -->
+    <section class="card">
+      <h2>Expense Ledger</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody id="ledger"></tbody>
+      </table>
+    </section>
+
+  </div>
+
+  <script type="module" src="js/allowance.js"></script>
+  <script type="module" src="js/transactions.js"></script>
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

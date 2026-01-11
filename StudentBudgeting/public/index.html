@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Budgeting System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Student Budgeting System</h1>
+      <p>Daily Expense Tracking Using Accounting Principles</p>
+    </header>
+
+    <main class="container">
+      <!-- ACTION BUTTONS -->
+      <div class="action-bar">
+        <button id="openAllowanceModal">➕ Set Allowance</button>
+        <button id="openExpenseModal">➕ Add Expense</button>
+        <button id="logoutBtn">Logout</button>
+      </div>
+
+      <!-- SUMMARY -->
+      <section class="card summary horizontal-summary">
+        <h2>Today's Summary</h2>
+
+        <div class="summary-cards">
+          <div class="summary-item budget">
+            <div class="icon">💰</div>
+            <div class="info">
+              <span>Daily Budget</span>
+              <strong>₱<span id="dailyBudget">0</span></strong>
+            </div>
+          </div>
+
+          <div class="summary-item spent">
+            <div class="icon">📤</div>
+            <div class="info">
+              <span>Spent Today</span>
+              <strong>₱<span id="spentToday">0</span></strong>
+            </div>
+          </div>
+
+          <div class="summary-item remaining">
+            <div class="icon">🟢</div>
+            <div class="info">
+              <span>Remaining</span>
+              <strong>₱<span id="remaining">0</span></strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHARTS -->
+      <div class="grid">
+        <section class="card">
+          <h2>Weekly Expenses</h2>
+          <canvas id="weeklyBarChart"></canvas>
+        </section>
+
+        <section class="card">
+          <h2>Expense Breakdown</h2>
+          <canvas id="expensePieChart"></canvas>
+        </section>
+      </div>
+
+      <!-- LEDGER -->
+      <section class="card">
+        <h2>Expense Ledger</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Category</th>
+              <th>Amount (₱)</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody id="ledger"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Student Budgeting System • BSIT Project</p>
+    </footer>
+
+    <!-- ALLOWANCE MODAL -->
+    <div class="modal" id="allowanceModal">
+      <div class="modal-content">
+        <h2>Set Allowance</h2>
+        <input type="number" id="allowanceAmount" placeholder="Amount (₱)" />
+        <select id="allowanceType">
+          <option value="daily">Daily</option>
+          <option value="weekly">Weekly</option>
+          <option value="monthly">Monthly</option>
+        </select>
+        <button id="saveAllowance">Save</button>
+        <button class="close">Cancel</button>
+      </div>
+    </div>
+
+    <!-- EXPENSE MODAL -->
+    <div class="modal" id="expenseModal">
+      <div class="modal-content">
+        <h2>Add Expense</h2>
+        <input type="number" id="expenseAmount" placeholder="Amount (₱)" />
+        <select id="expenseCategory">
+          <option>Food</option>
+          <option>Transport</option>
+          <option>School</option>
+          <option>Misc</option>
+        </select>
+        <input type="text" id="expenseDesc" placeholder="Description" />
+        <button id="addExpense">Add</button>
+        <button class="close">Cancel</button>
+      </div>
+    </div>
+
+    <script src="js/authGuard.js"></script>
+    <script type="module" src="js/ui.js"></script>
+    <script type="module" src="js/allowance.js"></script>
+    <script type="module" src="js/transactions.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+    <script type="module" src="js/charts.js"></script>
+  </body>
+</html>

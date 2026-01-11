@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Budgeting | Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+  <div class="auth-container">
+    <div class="auth-card">
+
+      <h1>Student Budgeting System</h1>
+      <p class="subtitle">Login using your Student ID</p>
+
+      <!-- LOGIN -->
+      <form id="loginForm">
+        <label>Student ID</label>
+        <input type="text" id="loginStudentId" placeholder="e.g. 122917" required />
+
+        <label>Birthdate</label>
+        <input type="text" id="loginBirthdate" placeholder="MM/DD/YYYY" maxlength="10" required />
+
+        <button type="submit">Login</button>
+      </form>
+
+      <p class="switch">
+        No account?
+        <span id="openRegister">Create one</span>
+      </p>
+
+    </div>
+  </div>
+
+  <!-- REGISTER MODAL -->
+  <div class="modal" id="registerModal">
+    <div class="modal-card">
+      <h2>Create Account</h2>
+
+      <label>Student ID</label>
+      <input type="text" id="regStudentId" placeholder="e.g. 122917" />
+
+      <label>Birthdate</label>
+      <input type="text" id="regBirthdate" placeholder="MM/DD/YYYY" maxlength="10" />
+
+      <button id="registerBtn">Register</button>
+      <button class="close" id="closeRegister">Cancel</button>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
